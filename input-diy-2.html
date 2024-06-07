@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Input - DIY 2</title>
+</head>
+
+<body>
+  <input type="number" placeholder="Numero 1" id="numero1" />
+  <input type="number" placeholder="Numero 2" id="numero2" />
+  <button onclick="add()">Soma</button>
+  <p id="result"></p>
+  <input type="text" placeholder="Background Color" id="background-color" />
+  <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+  <script>
+    function add() {
+      const numero1 = document.getElementById("numero1").value;
+      const numero2 = document.getElementById("numero2").value;
+
+      const result = parseInt(numero1) + parseInt(numero2);
+      alert("Result: " + result);
+      document.getElementById("result").innerText = "Result: " + result;
+    }
+
+    function changeBackgroundColor() {
+      const backgroundColor = document.getElementById("background-color").value;
+      document.getElementById("result").style.backgroundColor = backgroundColor;
+    }
+  </script>
+</body>
+
+</html>
