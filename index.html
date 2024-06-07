@@ -12,6 +12,16 @@
   <body>
     <h1 id="title">Javascript - Output</h1>
     <h1>Titulo sem ID</h1>
-    <script src="index.js"></script>
+    <label for="name">Name</label>
+    <input type="text" placeholder="Name" id="name"/>
+    <button onclick="getName()">Submit</button>
+    <!-- <script src="index.js"></script> -->
+    <!-- <script src="input.js"></script> -->
+    <script>
+      function getName() {
+        const name = document.getElementById("name").value;
+        alert("Name: " + name);
+      }
+    </script>
   </body>
 </html>
