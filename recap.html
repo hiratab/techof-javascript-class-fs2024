@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Javascript - Output</title>
+    <style>
+      #title {
+        color: brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Javascript - Output - Recap</h1>
+    <input type="text" placeholder="Name" id="nameInput" />
+    <button onclick="getName()">Submit</button>
+
+    <script>
+      console.log("Output no console");
+      document.getElementById("title").innerText = "Recap de output";
+      function getName() {
+        const name = document.getElementById("nameInput").value;
+        alert("Name: " + name);
+      }
+    </script>
+  </body>
+</html>

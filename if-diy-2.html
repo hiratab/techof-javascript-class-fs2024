@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - If Else</title>
+</head>
+
+<body>
+  <input type="number" placeholder="Valor para se é divisivel por 2" id="x" />
+  <button onclick="menor()">Menor Valor</button>
+
+  <script>
+    function menor() {
+      const x = Number(document.getElementById("x").value);
+
+      if ((x % 2) === 0) {
+        alert("O numero é divisel por 2");
+      } else {
+        alert("O numero não é divisivel por 2");
+      }
+    }
+  </script>
+</body>
+
+</html>

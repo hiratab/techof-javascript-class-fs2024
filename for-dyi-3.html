@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - For - DYI 3</title>
+</head>
+
+<body>
+  <p id="sum"></p>
+  <p id="average"></p>
+  <p id="above1000"></p>
+  <button onclick="getSalaries()">Calculate</button>
+  
+  <script>
+    function getSalaries() {
+      let sum = 0;
+      let above1000 = 0;
+
+      for (let i = 0 ; i < 5 ; i++) {
+        const salary = Number(prompt('Insert salary'));
+
+        console.log(salary);
+        sum = sum + salary;
+
+        if (salary > 1000) {
+          above1000++;
+        }
+      }
+
+      document.getElementById("sum").innerText = "sum " + sum;
+      document.getElementById("average").innerText = "average " + (sum / 5);
+      document.getElementById("above1000").innerText = "above 1000 " + above1000;
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - For</title>
+</head>
+
+<body>
+  <p id="details"></p>
+  <button onclick="countEvenNumbers()">Count even numbers</button>
+
+  <script>
+    function countEvenNumbers() {
+      let count = 0;
+
+      // const number = Number(prompt("Insira um numero"));
+      // if (number % 2 === 0) {
+      //   count++;
+      // }
+
+      // const number1 = Number(prompt("Insira um numero"));
+      // if (number1 % 2 === 0) {
+      //   count++;
+      // }
+
+      // const number2 = Number(prompt("Insira um numero"));
+      // if (number2 % 2 === 0) {
+      //   count++;
+      // }
+
+      // const number3 = Number(prompt("Insira um numero"));
+      // if (number3 % 2 === 0) {
+      //   count++;
+      // }
+
+      for (let i = 0; i < 4; i++) {
+        const number = Number(prompt("Insira um numero"));
+        if (number % 2 === 0) {
+          count++;
+        }
+      }
+
+      document.getElementById("details").innerText = 'A quantidade de even numbers é ' + count;
+
+    }
+
+  </script>
+</body>
+
+</html>

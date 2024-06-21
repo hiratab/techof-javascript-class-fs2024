@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - For</title>
+</head>
+
+<body>
+  <input type="number" placeholder="Quantidade de logs" id="quantidade" />
+  <button onclick="generateRandomNumber()">Execute For Loop</button>
+
+  <script>
+    function generateRandomNumber() {
+      const quantidade = Number(document.getElementById("quantidade").value);
+
+      for(let i = quantidade, acc = 0; i > 0; i--) {
+        acc = acc + i;
+        console.log(acc);
+      }
+    }
+
+    function printToConsole(i) {
+      console.log('x: ', i);
+    }
+  </script>
+</body>
+
+</html>

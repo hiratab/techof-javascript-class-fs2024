@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - If Else</title>
+</head>
+
+<body>
+  <input type="number" placeholder="Valor para x" id="x" />
+  <input type="number" placeholder="Valor para y" id="y" />
+  <button onclick="menor()">Menor Valor</button>
+
+  <script>
+    function menor() {
+      const x = Number(document.getElementById("x").value);
+      const y = Number(document.getElementById("y").value);
+
+      if (x >= 10 && x <= 100) {
+        console.log('x esta entre 10 e 100', x);
+      }
+
+      if (y === 10 || y === 20) {
+        console.log('O valor de y é 10 ou 20');
+      }
+
+      if (y !== 10) {
+        console.log('O valor de y é diferente de 10');
+      }
+
+      // if (x) {
+      //   console.log(x);
+      // } else {
+      //   console.log(y);
+      // }
+
+      // if (x < y) {
+      //   alert("O menor valor é: " + x);
+      // } else if (x === y) {
+      //   alert("Os valores são iguais");
+      // } else {
+      //   alert("O menor valor é: " + y);
+      // }
+
+      console.log((x < y), x, y);
+      const menorValor = x < y ? "O menor valor é: " + x : (x !== y) ? "O menor valor é: " + y : "Os valores são iguais";
+      // alert(menorValor);
+    }
+  </script>
+</body>
+
+</html>
