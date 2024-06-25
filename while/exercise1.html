@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - While - Exercise 1</title>
+</head>
+
+<body>
+  <button onclick="truncate()">While</button>
+
+  <script>
+    function truncate() {
+      const number = Number(prompt('Informe um numero'));
+
+      let num = number;
+      let counter = 0;
+      while (num != 0) {
+        counter++;
+        num = Number(num / 10).toFixed(0);
+        console.log('counter', counter, 'num', num);
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

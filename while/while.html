@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - While</title>
+</head>
+
+<body>
+  <button onclick="metodo1()">While</button>
+  <button onclick="metodo2()">Metodo 2</button>
+
+  <script>
+    function metodo1() {
+      let max = Infinity * -1;
+      let i = 0;
+      while (i < 10) {
+        const number = Number(prompt('Informe um numero'));
+
+        if (number > max) {
+          max = number;
+        }
+        i++;
+      }
+
+      alert('O valor maximo é ' + max);
+
+    }
+
+    function metodo2() {
+      let max = Infinity * -1;
+      let number = 1;
+      while (number % 2 !== 0) {
+        number = Number(prompt('Informe um numero par'));
+      }
+
+      alert('O numero par informado foi ' + number);
+    }
+
+  </script>
+</body>
+
+</html>

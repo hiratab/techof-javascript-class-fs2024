@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - For - Home Pratice - DYI 4</title>
+</head>
+
+<body>
+  <button onclick="metodo1()">Metodo 1</button>
+  <button onclick="metodo2()">Metodo 2</button>
+
+  <script>
+    function metodo1() {
+      let max;
+
+      for (let i = 0; i < 10; i++) {
+        const number = Number(prompt('Informe um numero'));
+        if (!max || number > max) {
+          max = number;
+        }
+      }
+
+      alert('O valor maximo é ' + max);
+    }
+
+    function metodo2() {
+      let max = Infinity * -1;
+
+      for (let i = 0 ; i < 10 ; i++) {
+        const number = Number(prompt('Informe um numero'));
+
+        if (number > max) {
+          max = number;
+        }
+      }
+
+      alert('O valor maximo é ' + max);
+    }
+  </script>
+</body>
+
+</html>
