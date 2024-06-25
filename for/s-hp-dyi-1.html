@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - For - Home Pratice - DYI 1</title>
+</head>
+
+<body>
+  <script>
+    // Receber um numero - OK
+      // Pegar o numero atraves <input />
+      // Pegar o numero pelo prompt()
+    // Calcular os numeros que sao menores que o numero informado
+      // For loop
+        // Iniciando o loop com o valor igual ao numero informado
+        // Subtrair um deste valor a cada iteração
+        // Executar o loop ate que o valor seja menor ou igual a zero
+        // Sobre os numeros calculados
+          // Guarda cada valor
+          // Exibe o valor em cada iteração
+    // Exibir estes numeros
+      // console.log
+      // alert()
+      // document.getElementById().innerText
+  
+    let number = Number(prompt('Insert a number'));
+
+    for (let i = number - 1; i >= 0 ; i--) {
+      console.log(i);
+    }
+
+    console.log('Opcao 2');
+    for (let i = 0; i < number; i++) {
+      console.log(i);
+    }
+
+    console.log('Opcao 3');
+    let _number = number -1;
+    for (; _number >= 0; _number--) {
+      console.log(_number);
+    }
+
+    console.log('Opcao 4');
+    const numerosMenoresQueNumber = [];
+    for (let i = 0; i < number; i++) {
+      numerosMenoresQueNumber.push(i);
+    }
+    for (numero in numerosMenoresQueNumber) {
+      console.log(numero);
+    }
+  </script>
+</body>
+
+</html>
