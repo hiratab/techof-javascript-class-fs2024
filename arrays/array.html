@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Array</title>
+</head>
+
+<body>
+
+  <script>
+    const salaryA = 1000;
+    const salaryB = 2000;
+    const salaryC = 900;
+    
+    const salaries = [1000, 2000, 900];
+    //                 0     1    2
+    // 00 = 0
+    // 01 = 1
+    // 10 = 2
+    // 11 = 3
+    const salariesVar = [salaryA, salaryB, salaryC];
+    console.log('Array inteiro', salaries);
+    console.log('So o primeiro elemento', salaries[0]);
+    console.log('So o segundo elemento', salaries[1]);
+    console.log('So o terceiro elemento', salariesVar[2]);
+
+    const salariesEmpty = [];
+    salariesEmpty[0] = 1000;
+    salariesEmpty[1] = salaryB;
+    salariesEmpty[2] = salariesVar[2];
+    salariesEmpty[999] = 2000;
+    console.log('Array salariesEmpty inteiro', salariesEmpty);
+
+    const arrayInitByFor = [];
+    for (let i = 0; i < 10 ; i++) {
+      arrayInitByFor[i] = Math.round(Math.random() * 1000);
+    }
+
+    console.log('length do arrayInitByFor', arrayInitByFor.length)
+    for (let i = 0 ; i < arrayInitByFor.length ; i++) {
+      console.log('i', i, arrayInitByFor[i]);
+    }
+
+    // const arrayInitWhile = [];
+    // while (arrayInitWhile.length < 5) {
+    //   // arrayInitWhile[arrayInitWhile.length] = Number(prompt('Insira um numero'));
+    // }
+    // console.log('arrayInitWhile', arrayInitWhile);
+    console.log(`\n\n`)
+
+    const diy2 = [4, 6, 10];
+    const diy2Reversed = [];
+
+    // i = diy2.length - 1 => i = 3 - 1 => i = 2
+    for (let i = diy2.length - 1 ; i >= 0 ; i--) {
+      // diy2[2] = 10
+      // diy2Reversed.length = 0
+      // diy2Reversed[0] = 10
+
+      // i = 1
+      // diy2[1] = 6
+      // diy2Reversed = [10]
+      // diy2Reversed.length = 1
+      // diy2Reversed[1] = 6
+
+      // i = 0
+      // diy2[0] = 4
+      // diy2Reversed = [10, 6]
+      // diy2Reversed.length = 2
+      // diy2Reversed[2] = 4
+      // diy2Reversed = [10, 6, 4]
+      console.log('i', i, 'diy2Reversed.length', diy2Reversed.length, 'diy2[i]', diy2[i]);
+      diy2Reversed[diy2Reversed.length] = diy2[i];
+      console.log('diy2Reversed[diy2Reversed.length]', diy2Reversed[diy2Reversed.length - 1]);
+    }
+    console.log('Reversed com o for', diy2Reversed);
+    
+    console.log('Reversed', diy2.reverse());
+
+    // const arrayInitWhile = [];
+    // while (diy2.length < 5) {
+    //   diy2.push(Number(prompt('Insira um numero')));
+    // }
+    // console.log('diy2', diy2);
+
+    console.log('pop', diy2.pop());
+
+    const name = ['b', 'r', 'u', 'n', 'o'];
+    const lastName = ['h', 'i', 'r', 'a', 't', 'a'];
+    console.log(name.concat(lastName));
+    console.log(lastName.concat(name));
+    
+    // console.log('join', name.join('-mais-'), name);
+    // console.log(name.join('').concat(lastName.join('')).join(' '));
+
+    const names = ['carla', 'ccrla', 'abna', 'bruno', 'ana'];
+    console.log('names', names)
+    console.log(names.sort());
+
+    const numbers = [100, 12, 23, 210, 150, 280, 320, 90];
+    console.log('numbers', numbers)
+    console.log(numbers.sort((a, b) => a - b)); // Ordena de forma crescente
+    console.log(numbers.sort((a, b) => b - a)); // Ordena de forma decrescente
+    // Se negativo => a < b
+    // Se 0 => a == b
+    // Se positivo => a > b
+    
+    // a = 100 b = 12
+    // a - b => 100 - 12 => Algum numero positivo
+    // inverte a posicao => [12, 100, 23, 210, 150, 280, 320, 90]
+    // a = 12 b = 23
+    // a - b = 12 - 23 => negativo
+    // mantem a posicao => [12, 23, 90, 100, 150, 210, 280, 320]
+
+    console.log(names.indexOf('bruno'));
+    if (names.indexOf('bruno') >= 0) {
+      console.log('Bruno esta na lista');
+    }
+    if (names.indexOf('sofia') < 0) {
+      console.log('Sofia nao esta na lista');
+    }
+    // Substituir bruno por teacher
+    names[names.indexOf('pedro')] = 'teacher';
+    console.log('names depois do indexOf', names);
+
+    numbers.splice(0, 0, 123);
+    console.log('numbers depois do splice, adicionando elemento', numbers);
+    
+    console.log('numbers depois do splice, substituindo elemento', numbers, numbers.splice(7, 1, 9123));
+    
+    console.log('numbers depois do splice, removendo elemento', numbers, numbers.splice(7, 1));
+    
+    console.log('Slice 0 a 3', numbers.slice(0, 3), numbers);
+    console.log('Slice 0 a -3', numbers.slice(2, 3), numbers);
+
+    const mySet = new Set([1, 2, 3]);
+    console.log('mySet', mySet);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add(4);
+    mySet.add('bruno');
+    mySet.add('bruno');
+    mySet.add('bruno');
+    mySet.add('bruno');
+    mySet.add('bruno');
+    mySet.add('bruno');
+    console.log('mySet', mySet);
+
+
+  </script>
+</body>
+
+</html>
