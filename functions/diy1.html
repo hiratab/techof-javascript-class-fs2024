@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Functions</title>
+</head>
+
+<body>
+
+  <button onclick="getNumbers()">Max</button>
+  <p id="max"></p>
+  <script>
+    function maxBetween3Numbers(n1, n2, n3) {
+      const numbers = [Number(n1), Number(n2), Number(n3)];
+      numbers.sort((a, b) => a - b);
+
+      return numbers.pop();
+    }
+
+    function getNumbers(){
+      const n1 = Number(prompt('Valor para n1'));
+      const n2 = Number(prompt('Valor para n2'));
+      const n3 = Number(prompt('Valor para n3'));
+
+      const max = maxBetween3Numbers(n1, n2, n3);
+      document.getElementById("max").innerText = "max is: " + max;
+    }
+  </script>
+</body>
+
+</html>
