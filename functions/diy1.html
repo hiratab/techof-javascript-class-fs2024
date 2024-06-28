@@ -25,6 +25,37 @@
       const max = maxBetween3Numbers(n1, n2, n3);
       document.getElementById("max").innerText = "max is: " + max;
     }
+
+    /*
+      Apertei o botao
+      Executa getNumbers
+      n1 <= 1
+      n2 <= 2
+      n3 <= 3
+
+      Chama maxBetween3Numbers(n1, n2, n3)
+      Substituindo os valores 
+      Chama maxBetween3Numbers(1, 2, 3)
+
+      Executa maxBetween3Numbers
+      Parametros n1, n2, n3
+      Atribuindo os valores ao parametros
+      n1 <= 1
+      n2 <= 2
+      n3 <= 3
+
+      Inicializa o numbers [n1, n2, n3] => [1, 2, 3]
+      Ordenar a lista numbers.sort((a, b) => a - b) => [1, 2, 3]
+      Primeiro será o menor e o ultimo será o maior
+
+      Retorna o maior valor
+      [1, 2, 3]
+       0  1  2
+      return numbers[2]
+      return numbers.pop()
+      return numbers.slice(x, x)
+
+    */
   </script>
 </body>
 

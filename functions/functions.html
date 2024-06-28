@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Functions</title>
+</head>
+
+<body>
+
+  <button onclick="add(1, 2)">Add</button>
+  <button onclick="add()">Add Sem Parametros</button>
+  <button onclick="add(10)">Add So Com Parametro A</button>
+  <button onclick="getNumbersAndAdd()">Recebe Numeros e Add</button>
+  <p id="soma"></p>
+  <script>
+    // Function declaration
+    // Function expression
+    // Arrow functions => Tambem conhecido lambda functions, anonymous functions
+    // Immediate functions
+
+    // function NomeDaFuncao(Parametros) {}
+    // NomeDaFuncao(Parametros)
+    const myFn = function(a) {
+      console.log('My Function na variavel', a);
+    }
+    function add(a, b = 200) {
+      console.log('a', a);
+      console.log('b', b);
+      const soma = a + b;
+      console.log(soma);
+      return soma;
+    }
+
+    function getNumbersAndAdd() {
+      const a = Number(prompt('Valor para o A'));
+      const b = Number(prompt('Valor para o B'));
+
+      const soma = add(a, b);
+      document.getElementById("soma").innerText = "A soma e " + soma;
+    }
+
+    const arrow = (a, b) => console.log('a', a, 'b', b);
+
+    const r = (a, b) => a + b;
+    const myName = (first, last) => first + " " + last
+
+    (function(a, b) {
+      console.log('Immediately Function', a + b);
+    })(10, 20);
+
+  </script>
+</body>
+
+</html>
