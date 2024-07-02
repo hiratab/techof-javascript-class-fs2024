@@ -1,0 +1,35 @@
+<html>
+   <body>
+       <h1>Change second to red 😱</p>
+       <button onclick="changeSecondItemToRed()">Change second to red</button>
+       <ul id="myFriends">
+           <li>hi 1</li>
+           <li>by 2</li>
+           <li>dy 3</li>
+       </ul>
+       <script>
+           function changeSecondItemToRed(){
+            const ul = document.getElementById("myFriends");
+            const secondItem = ul.childNodes[3];
+            secondItem.style.color = 'red';
+
+            const ul1 = document.getElementsByTagName("ul")[0];
+            const secondItem1 = ul.childNodes[3];
+            secondItem1.style.color = 'red';
+
+            const ul2 = document.getElementById("myFriends");
+            const ulChildsLi2 = ul2.getElementsByTagName("li");
+            ulChildsLi2[1].style.color = 'red';
+
+            const ulChildsLi3 = document.querySelectorAll("#myFriends li");
+            ulChildsLi3[1].style.color = 'red';
+
+            const ulChildsLi4 = document
+                                  .querySelector("#myFriends")
+                                  .querySelectorAll("li");
+            ulChildsLi4[1].style.color = 'red';
+
+           }
+       </script>
+   </body>   
+</html>
