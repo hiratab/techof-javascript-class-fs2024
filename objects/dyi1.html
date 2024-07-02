@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Object</title>
+</head>
+
+<body>
+
+  <script>
+    const computer = {
+      price: 1000,
+      color: "blue",
+      memory: 16
+    };
+    console.log("computer", computer);
+
+    const computerBlack = {};
+    computerBlack["price"] = 500;
+    computerBlack["color"] = "black";
+    computerBlack["memory"] = 8;
+    console.log("computerBlack", computerBlack);
+
+    function Computer(price, color, memory) {
+      this.price = price;
+      this.color = color;
+      this.memory = memory;
+    }
+    const computerWhite = new Computer(1000, "white", 16);
+    console.log("computerWhite", computerWhite);
+
+  </script>
+</body>
+
+</html>

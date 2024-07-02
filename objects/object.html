@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Object</title>
+</head>
+
+<body>
+
+  <script>
+    const x = "x";
+    const obj1 = {
+      foo: "bar"
+    }
+
+    const obj = {
+      key: "value",
+      k: x,
+      1: 123,
+      "outra-key": "outro-valor",
+      fn: () => console.log("Function dentro do objeto"),
+      obj1: obj1
+    };
+
+    // const myCar = { 
+    //   color: 'red',
+    //   wheels: "4",
+    //   engine: {
+    //     cylinders: 4,
+    //     size: 2.2
+    //   }
+    // };
+
+    // const myOtherCar = Object.assign({}, myCar);
+    // const myOtherCar = {
+    //   ...myCar
+    // };
+    // const myOtherCar = {
+    //   color: myCar.color,
+    // }
+
+    // const myOtherCar = {};
+    // for (let key of Object.keys(myCar)) {
+    //   myOtherCar[key] = myCar[key];
+    // }
+
+    function Car(color, wheels, engine) {
+      this.color = color;
+      this.wheels = wheels;
+      this.engine = engine;
+
+      this.printEngine = () => {
+        console.log(engine)
+      }
+    }
+
+    function Engine(cylinders, size) {
+      this.cylinders = cylinders;
+      this.size = size;
+
+      this.printEngineDetails = () => {
+        console.log(`cylinders ${cylinders} size ${size}`)
+      }
+    }
+
+    const engine4Cyl = new Engine(4, 2.2);
+
+    const myCar = new Car('red', 4, engine4Cyl);
+    const myOtherCar = new Car('red', 4, engine4Cyl);
+
+    
+  </script>
+</body>
+
+</html>
