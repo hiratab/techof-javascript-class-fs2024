@@ -1,0 +1,47 @@
+<html>
+
+<head>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Please add friends</p>
+    <input type="text" id="friend" placeholder="Add Friends">
+    <button onclick="addFriend()">Add</button>
+    <button onclick="removeFriend()">Remove</button>
+
+    <ul id="myFriends">
+    </ul>
+    
+    <script>
+      function addFriend() {
+        // const document = {
+        //   createElement: () => {}
+        // }
+        const li = document.createElement("li");
+        li.innerText = document.getElementById("friend").value;
+
+        document.getElementById("myFriends").appendChild(li);
+        document.getElementsByTagName("ul")[0].appendChild(li);
+      }
+
+      function removeFriend() {
+        const lis = document.querySelectorAll("#myFriends li");
+        const friendName = document.getElementById("friend").value;
+
+        for (let i = 0 ; i < lis.length ; i++) {
+          const li = lis[i];
+
+          if (li.innerText === friendName) {
+            li.parentNode.removeChild(li);
+          }
+        }
+      }
+    </script>
+</body>
+
+</html>
