@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Javascript - Modal</title>
+  <style>
+    h2 {
+      text-align: center;
+    }
+
+    .button-delete, .button-cancel {
+      border: 0.1em solid black;
+    }
+
+    .button-delete {
+      background-color: yellow;
+    }
+
+    .button-cancel {
+      background-color: rgb(255, 85, 0);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: lightslategray;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto 15% auto; 
+      width: 80%;
+      padding: 1em;
+      text-align: center;
+    }
+
+    .close {
+      position: absolute;
+      right: 50px;
+      top: 50px;
+    }
+
+    .close:hover, .close:focus {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Modal</h2>
+  <button class="open-modal">Open Modal</button>
+
+  <div id="my-modal" class="modal">
+    <span class="close" onclick="hideModal()">X</span>
+    <div class="modal-content">
+      <h1>Delete file?</h1>
+      <p>Are you sure you want to delete the file?</p>
+      <div class="button-container">
+        <button class="button-cancel">Cancel</button>
+        <button class="button-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openModal() {
+      document.getElementById("my-modal").style.display = 'block';
+    }
+
+    function hideModal() {
+      document.getElementById("my-modal").style.display = 'none';
+    }
+
+    document.querySelector(".open-modal").addEventListener("click", openModal);
+    document.querySelector(".button-cancel").addEventListener("click", hideModal);
+    document.querySelector(".button-delete").addEventListener("click", hideModal);
+
+    document.addEventListener('keydown', function (event) {
+      console.log(event);
+      if (event.key === "Escape") {
+        hideModal();
+      }
+    });
+  </script>
+</body>
+
+</html>
