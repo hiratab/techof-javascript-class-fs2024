@@ -31,6 +31,30 @@
     const r = (a, b) => a + b;
     const myName = (first, last) => { return first + " " + last }
 
+    const arr = [1, 6, 2, 9]
+    const num = 6
+    function checkIfNumberExistInArray(arr, num) {
+      if (arr.indexOf(num) >= 0) {
+        alert('Numero existe');
+      }
+
+      for (let i = 0 ; i < arr.length ; i++) {
+        if (arr[i] === num) {
+          alert('Numero existe');
+        }
+      }
+
+      let achouONumero = false;
+      for (let i = 0 ; i < arr.length ; i++) {
+        if (arr[i] === num) {
+          achouONumero = true;
+        }
+      }
+
+      if (achouONumero) alert('Numero existe');
+    }
+    checkIfNumberExistInArray(arr, num)
+
   </script>
 </body>
 
