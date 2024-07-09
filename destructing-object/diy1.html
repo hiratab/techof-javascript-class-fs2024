@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+</body>
+<script>
+  let restaurant = {
+    timeShift1: '8:00-16:00',
+    timeShift2: '16:00-00:00',
+    shiftsWorkers: [
+      [
+        'Mike',
+        'James',
+        'John',
+        'Michael',
+        'William',
+        'David',
+      ],
+      [
+        'Joseph',
+        'Thomas',
+        'Charles',
+        'Christopher',
+        'Daniel',
+        'Mark',
+      ],
+    ],
+    totalTipShift1: 4000,
+    totalTipShift2: 5000,
+    tipped: ['Mike', 'James', 'Michael', 'David', 'Thomas'],
+    date: '12/12/2021'
+  };
+
+  const { shiftsWorkers, timeShift1, timeShift2 } = restaurant;
+  const [shift1, shift2] = shiftsWorkers;
+
+  console.log(
+    {
+      timeShift: timeShift1,
+      workers: shift1
+    },
+    {
+      timeShift: timeShift2,
+      workers: shift2
+    }
+  )
+</script>
+
+</html>
