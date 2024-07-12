@@ -60,7 +60,26 @@ const selectRandomImage = () => {
   const imageToGuessIndex = Math.floor(Math.random() * images.length);
   const { url } = images[imageToGuessIndex];
   document.getElementById("img-to-guess").src = url;
+  const log = () => {
+    console.log('log', imageToGuessIndex);
+  }
+  log();
 
   return imageToGuessIndex;
 }
 const i = selectRandomImage();
+
+function setSize(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  }
+}
+
+const size12 = setSize(12);
+const size16 = setSize(16);
+const size26 = setSize(26);
+const size32 = setSize(32);
+
+function setSizeDireto(size) {
+  document.body.style.fontSize = size + 'px';
+}
