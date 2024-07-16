@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Some Find</title>
+</head>
+<body>
+  <h1>Some Find</h1>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+
+    console.log(
+      'some',
+      '> 3',
+      numbers.some(number => number > 3),
+      '< 10',
+      numbers.some(number => number < 10),
+      '> 30',
+      numbers.some(number => number > 30),
+      '\nevery',
+      '> 3',
+      numbers.every(number => number > 3),
+      '< 10',
+      numbers.every(number => number < 10),
+      '> 30',
+      numbers.every(number => number > 30),
+    )
+  </script>
+</body>
+</html>
