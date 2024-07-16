@@ -26,3 +26,9 @@ numbers.forEach((number) => {
   console.log(number + ' x ' + number + ' = ' + number * number);
 });
 console.log('-------------------');
+
+const carsWithPrices = [{
+  name: 'Audi',
+  price: 10000,
+}];
+const applyDiscount = ({ price }) => price * 0.8;
