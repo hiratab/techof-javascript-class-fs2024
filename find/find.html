@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>find</title>
+</head>
+<body>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 3) {
+        console.log('Find', numbers[i]);
+        return numbers[i];
+      }
+    }
+
+    console.log(
+      'Find',
+      numbers,
+      numbers.find(number => number > 3)
+    );
+  </script>
+</body>
+</html>

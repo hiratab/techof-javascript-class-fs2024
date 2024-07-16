@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Find Index</title>
+</head>
+<body>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] > 3) {
+        console.log('Find', i);
+        break;
+      }
+    }
+
+    if (numbers.findIndex(number => number > 30) > 0) {
+      console.log('Tem maior 30');
+    }
+
+    if (numbers.find(number => number > 30)) {
+      console.log('Tem maior 30');
+    }
+    console.log(
+      'Find',
+      numbers,
+      numbers.findIndex(number => number > 30)
+    );
+  </script>
+</body>
+</html>
