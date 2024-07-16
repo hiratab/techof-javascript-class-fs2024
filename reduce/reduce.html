@@ -1,28 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reduce</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduce</title>
 </head>
+
 <body>
-    <h1>Reduce</h1>
-    <script>
-      const numbers = [1, 2, 3, 4, 5];
+  <h1>Reduce</h1>
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
 
-      let acumulador = 10;
-      for (let i = 0; i < numbers.length; i++) {
-        console.log('acumulador', acumulador, 'numbers[i]', numbers[i]);
-        acumulador += numbers[i];
-      }
-      console.log(acumulador);
+    let acumulador = 10;
+    for (let i = 0; i < numbers.length; i++) {
+      console.log('acumulador', acumulador, 'numbers[i]', numbers[i]);
+      acumulador += numbers[i];
+    }
+    console.log(acumulador);
 
-      console.log(
-        numbers.reduce((valorAnterior, valorAtual) => {
+    console.log(
+      numbers
+        .filter(number => number > 3)
+        .map(number => number * 2)
+        .reduce((valorAnterior, valorAtual) => {
           console.log('valorAnterior', valorAnterior, 'valorAtual', valorAtual);
-          return valorAnterior + valorAtual 
+          return valorAnterior + valorAtual
         }, 10)
-      )
-    </script>
+    )
+  </script>
 </body>
+
 </html>
