@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <h1>Map Page</h1>
+    <script>
+        const numbers = [1, 2, 3, 4, 5];
+        console.log('forEach');
+        const forEach = numbers
+            .forEach((number) => {
+                console.log(number);
+                return number;
+            })
+        // .forEach((number) => {
+        //     console.log(number);
+        //     return number;
+        // });
+        console.log('forEach', forEach);
+
+        console.log('map');
+        const multiplyByTwo = numbers => numbers * 2;
+        const map = numbers.map(multiplyByTwo)
+            .map(multiplyByTwo)
+            .map(multiplyByTwo)
+            .map(multiplyByTwo);
+        console.log('map', map);
+    </script>
+</body>
+
+</html>
