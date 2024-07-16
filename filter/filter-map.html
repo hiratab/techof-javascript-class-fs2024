@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    <h1>Filter Page</h1>
+    <script>
+      const numbers = [1, 2, 3, 4, 5];
+      console.log(
+        'Map Filter',
+        numbers
+          .map(number => number * 2)
+          .filter(number => number > 3)
+      );
+      console.log(
+        'Filter Map',
+        numbers
+          .filter(number => number > 3)
+          .map(number => number * 2)
+      )
+    </script>
+</body>
+</html>
