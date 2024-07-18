@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numbers</title>
+</head>
+
+<body>
+  <h1>Numbers</h1>
+  <button onclick="aumentaLetra()">Aumenta letra</button>
+
+  <div id="square"></div>
+  <button onclick="aumentaQuadrado()">Aumenta quadrado</button>
+
+  <input type="text" id="number" placeholder="Digite um número">
+  <button onclick="validaNumero()">Valida número</button>
+
+  <script>
+    document.getElementsByTagName('h1')[0].style.fontSize = '50px';
+    function aumentaLetra() {
+      document.getElementsByTagName('h1')[0].style.fontSize = `${Number.parseInt(document.getElementsByTagName('h1')[0].style.fontSize) + 10}px`;
+      console.log('Size', document.getElementsByTagName('h1')[0].style.fontSize);
+    }
+
+    document.getElementById('square').style.width = '10.5px';
+    document.getElementById('square').style.height = '10.5px';
+    document.getElementById('square').style.backgroundColor = 'red';
+    function aumentaQuadrado() {
+      document.getElementById('square').style.width = `${Number.parseFloat(document.getElementById('square').style.width) + 10.5}px`;
+      document.getElementById('square').style.height = `${Number.parseFloat(document.getElementById('square').style.height) + 10.5}px`;
+    }
+
+    function validaNumero() {
+      const number = document.getElementById('number').value;
+      if (Number.isNaN(Number(number))) {
+        alert('Digite um número válido');
+      } else {
+        alert('Número válido');
+      }
+    }
+  </script>
+</body>
+
+</html>
