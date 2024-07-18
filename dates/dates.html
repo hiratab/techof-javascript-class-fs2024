@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dates</title>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+  <h1>Dates</h1>
+
+  <p id="date"></p>
+  <button onclick="updateDate()">Update date</button>
+
+  <p id="date-past"></p>
+  <input type="date" id="date-input">
+  <button onclick="updatePastDate()">Update past date</button>
+
+  <p id="formated-date"></p>
+
+  <h2>Create date</h2>
+  <p id="created-date"></p>
+  <input type="number" id="year" placeholder="year">
+  <input type="number" id="month" placeholder="month">
+  <input type="number" id="day" placeholder="day">
+  <button onclick="createDate()">Create date</button>
+
+  <p id="amanha"></p>
+  <button onclick="amanha()">Amanhã</button>
+
+  <script>
+    function updateDate() {
+      const date = new Date();
+      document.getElementById('date').innerText = date;
+    }
+
+    function updatePastDate() {
+      const date = new Date(document.getElementById('date-input').value);
+      document.getElementById('date-past').innerText = date;
+
+      const formatedDate = 
+      `Year: ${date.getFullYear()}
+      Month: ${date.getMonth() + 1}
+      Day: ${date.getDate()} - ${date.getDay()}
+      Hours: ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}
+      ISO: ${date.toISOString()}`
+      ;
+      document.getElementById('formated-date').innerText = formatedDate;
+    }
+
+    function createDate() {
+      const year = document.getElementById('year').value;
+      const month = document.getElementById('month').value;
+      const day = document.getElementById('day').value;
+
+      const date = new Date();
+      date.setFullYear(year);
+      date.setMonth(month - 1);
+      date.setDate(day);
+      document.getElementById('created-date').innerText = date;
+    }
+
+    document.getElementById('amanha').innerText = (new Date()).toISOString();
+    function amanha() {
+      const date = new Date(document.getElementById('amanha').innerText);
+      date.setDate(date.getDate() + 1);
+
+      document.getElementById('amanha').innerText = date.toISOString();
+    }
+  </script>
+</body>
+
+</html>
