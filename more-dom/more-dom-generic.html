@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My HTML Page</title>
+  <style>
+    .color-blue {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1>Attach events</h1>
+  <p id="e1">My name is e1</p>
+  <p id="e2">My name is e2</p>
+  <p id="e3">My name is e3</p>
+  <p id="e4">My name is e4</p>
+
+  <script>
+    function changeColor(event, color) {
+      event.target.style.color = color;
+    }
+
+    function changeColorOnMouseEnter(event) {
+      changeColor(event, 'blue');
+    }
+
+    function changeColorOnMouseLeave(event) {
+      changeColor(event, '');
+    }
+
+    e1.addEventListener('mouseenter', changeColorOnMouseEnter);
+    e1.addEventListener('mouseleave', changeColorOnMouseLeave);
+    e2.onmouseenter = changeColorOnMouseEnter;
+    e2.onmouseleave = changeColorOnMouseLeave;
+
+    function addClassOnMouseEnter(event) {
+      event.target.classList.add('color-blue');
+      //document.getElementById("e3").classList.add("color-blue")
+    }
+
+    function removeClassOnMouseLeave(event) {
+      event.target.classList.remove('color-blue');
+      //document.getElementById("e3").classList.remove("color-blue")
+    }
+
+    e3.addEventListener('mouseenter', addClassOnMouseEnter);
+    e3.addEventListener('mouseleave', removeClassOnMouseLeave);
+    e4.onmouseenter = addClassOnMouseEnter;
+    e4.onmouseleave = removeClassOnMouseLeave;
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My HTML Page</title>
+</head>
+<body>
+  <h1>Attach events</h1>
+  <p id="e1" onmouseenter="changeColorE1('blue')" onmouseleave="resetColorE1()">My name is e1</p>
+  <p id="e2">My name is e2</p>
+  <p id="e3">My name is e3</p>
+  <p id="e4">My name is e4</p>
+
+  <script>
+    function changeColorE1(color) {
+      document.getElementById('e1').style.color = color;
+    }
+
+    function resetColorE1() {
+      document.getElementById('e1').style.color = 'black';
+    }
+
+    const e2 = document.getElementById('e2');
+    e2.addEventListener('mouseenter', () => {
+      e2.style.color = 'blue';
+    });
+    e2.addEventListener('mouseleave', () => {
+      e2.style.color = '';
+    });
+
+    const e3 = document.getElementById('e3');
+    e3.onmouseenter = () => {
+      e3.setAttribute('style', 'color: blue;');
+    };
+    e3.onmouseleave = () => {
+      e3.setAttribute('style', '');
+    };
+
+    function changeColorOnClick(event, color) {
+      //e3.style.color = color; // Forma mais especifica de alterar a cor
+      event.target.style.color = color; // Forma mais generica de alterar a cor
+    }
+    const changeOnClick = (event) => changeColorOnClick(event, 'blue');
+
+    const e4 = document.getElementById('e4');
+    e4.addEventListener('click', changeOnClick);
+  </script>
+</body>
+</html>

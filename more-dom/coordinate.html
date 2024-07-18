@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coordinate</title>
+  <style>
+    .color-blue {
+      color: blue;
+    }
+  </style>
+
+<body>
+  <button id="button" onclick="show()">Show Coordinate</button>
+  <div id="box">
+    <p>img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo"
+      width="200" height="200"</p>
+  </div>
+  <p id="coordinate"></p>
+</body>
+<script>
+  function show() {
+    const box = document.getElementById("box");
+    const coordinate = box.getBoundingClientRect();
+
+    document.getElementById("coordinate").innerText = 
+      `Top: ${coordinate.top}, 
+      Left: ${coordinate.left}, 
+      Bottom: ${coordinate.bottom}, 
+      Right: ${coordinate.right}
+      Offset X: ${window.pageXOffset},
+      Offset Y: ${window.pageYOffset},
+      Width: ${coordinate.width} - ${document.documentElement.clientWidth},
+      Heigt: ${coordinate.height} - ${document.documentElement.clientHeight}`;
+  }
+</script>
+
+</html>
