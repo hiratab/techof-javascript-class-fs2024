@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Timer App</title>
+</head>
+<body>
+  <h1 id="title">Welcome to My Timer App</h1>
+  
+  
+  <script>
+    setTimeout(() => {
+      document.getElementById('title').style.color = 'red';
+    }, 1000);
+
+    const changeColorToBlue = () => {
+      document.getElementById('title').style.color = 'blue';
+    }
+    setTimeout(changeColorToBlue, 2000);
+
+    const changeColor = (color) => {
+      document.getElementById('title').style.color = color;
+    }
+    setTimeout(changeColor, 3000, 'orange');
+    setTimeout(changeColor, 4000, 'green');
+
+    const changeColorAndSize = (color, size) => {
+      changeColor(color);
+      document.getElementById('title').style.fontSize = size;
+    }
+    setTimeout(changeColorAndSize, 5000, 'yellow', '50px');
+    setTimeout(changeColorAndSize, 6000, 'grey', '80px');
+
+    setTimeout(changeColorAndSize, 0, 'purple', '100px');
+    changeColorAndSize('brown', '120px');
+  </script>
+  
+</body>
+</html>

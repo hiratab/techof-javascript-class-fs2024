@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Interval Example</title>
+</head>
+
+<body>
+  <h1 id="title">Interval Example</h1>
+
+  <button onclick="stopInterval()">Stop</button>
+  <button onclick="startInterval()">Start</button>
+
+  <script>
+    const colors = ['red', 'blue', 'orange', 'green', 'yellow', 'black'];
+
+    let interval;
+
+    function startInterval() {
+      console.log('start');
+      interval = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        document.getElementById('title').style.color = colors[randomIndex];
+      }, 1000);
+    }
+
+    function stopInterval() {
+      clearInterval(interval);
+    }
+  </script>
+</body>
+
+</html>
