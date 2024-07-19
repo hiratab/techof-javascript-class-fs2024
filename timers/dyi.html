@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My HTML File</title>
+</head>
+<body>
+  <p id="number"></p>
+  <script>
+    
+    setInterval(() => {
+      const randomNumber = Math.floor(Math.random() * 100);
+
+      document.getElementById("number").innerText = randomNumber;
+    }, 1000);
+  </script>
+</body>
+</html>
