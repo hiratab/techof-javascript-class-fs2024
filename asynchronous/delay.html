@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Delay</title>
+</head>
+
+<body>
+
+  <script>
+    const random = Math.floor(Math.random() * 1000) > 800;
+
+    const wait = (ms) => new Promise(function (resolve, reject) {
+      setTimeout(() => {
+        console.log(`Waited for ${ms} milliseconds`);
+        if (random) {
+          resolve(`${ms} ms random ${random}`);
+        } else {
+          reject(`${ms} ms random ${random}`);
+        }
+      }, ms)
+    });
+
+    wait(5000)
+      .then(() => wait(5001))
+      .then(() => wait(5002))
+      .then(() => wait(5003))
+      .then(() => wait(5004))
+      .then(() => wait(5005))
+      .then(() => wait(5006))
+      .then(() => wait(5007))
+      .then(() => wait(5008))
+      .then(() => wait(5009))
+      .catch((error) => console.log('Promise rejected ' + error));
+
+    wait(2000)
+      .then(() => wait(2001))
+      .then(() => wait(2002))
+      .then(() => wait(2003))
+      .then(() => wait(2004))
+      .then(() => wait(2005))
+      .then(() => wait(2006))
+      .then(() => wait(2007))
+      .then(() => wait(2008))
+      .then(() => wait(2009))
+      .catch(() => console.log('Promise rejected ' + error));
+      ;
+
+      Promise.all([
+        wait(2000),
+        wait(2001),
+        wait(2002),
+        wait(2003),
+        wait(2004),
+        wait(2005),
+        wait(2006),
+        wait(2007),
+        wait(2008),
+        wait(2009)
+      ]).then(() => {
+        console.log('All promises resolved');
+      })
+      .catch(() => console.log('Promise rejected ' + error));
+      ;
+  </script>
+</body>
+
+</html>

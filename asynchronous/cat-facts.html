@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cat Facts</title>
+  <style>
+    #random-cat-fact-spinner, #random-duck-image-spinner {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Cat Facts</h1>
+
+  <h2>Random Cat Facts</h2>
+  <img id="random-cat-fact-spinner" src="./img/load.svg" alt="Cat" width="100">
+  <p id="random-cat-fact"></p>
+  <button id="random-cat-fact-button" onclick="getRandomFact()">Get Random Fact</button>
+
+
+  <h2>Duck image</h2>
+  <img id="random-duck-image-spinner" src="./img/load.svg" alt="Cat" width="100">
+  <img id="random-duck-image" src="" alt="" width="100">
+  <button id="random-duck-button" onclick="getDuckImage()">Get Duck Image</button>
+  <script>
+    function getRandomFact() {
+      const url = "https://cat-fact.herokuapp.com/facts/random";
+
+      fetch(url)
+        .then(response => response.json())
+        .then(({ text }) => {
+          document.getElementById("random-cat-fact").innerText = text;
+        })
+        .catch(error => {
+          console.error(error);
+        })
+        .finally(() => {
+          document.getElementById("random-cat-fact-spinner").style.display = "none";
+        });
+
+      document.getElementById("random-cat-fact-spinner").style.display = "block";
+    }
+
+    function getDuckImage() {
+      const url = "https://random-d.uk/api/v1/random";
+      document.getElementById("random-duck-image-spinner").style.display = "block";
+
+      fetch(url, {
+        headers: {
+          "Access-Control-Allow-Origin": "*"
+        },
+        mode: "cors"
+      })
+        .then(response => response.json())
+        .then(({ url }) => {
+          document.getElementById("random-duck-image").src = url;
+        })
+        .catch(error => {
+          console.error(error);
+        })
+        .finally(() => {
+          document.getElementById("random-duck-image-spinner").style.display = "none";
+        });
+    }
+  </script>
+</body>
+
+</html>
