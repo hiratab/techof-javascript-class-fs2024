@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+</head>
+<body>
+  <h1>Hello, world!</h1>
+  
+  <script>
+    const john = {
+      firstName: "John",
+      lastName: "Doe",
+      age: 50,
+      eyeColor: "blue",
+      acordar: function() {
+        console.log("Acordando");
+      }
+    };
+    
+    const jane = {
+      firstName: "Jane",
+      lastName: "Doe",
+      age: 30,
+      eyeColor: "green",
+      acordar: function() {
+        console.log("Acordando");
+      }
+    };
+
+    function Person(firstName, lastName, age, eyeColor) {
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.age = age;
+      this.eyeColor = eyeColor;
+      this.acordar = function() {
+        console.log("Acordando");
+      };
+    }
+    const johnFn = new Person("John", "Doe", 50, "blue");
+    const janeFn = new Person("Jane", "Doe", 30, "green");
+
+    class PersonClass {
+      constructor(firstName, lastName, age, eyeColor) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+        this.eyeColor = eyeColor;
+      }
+      acordar() {
+        console.log("Acordando");
+      }
+    }
+    const johnClass = new PersonClass("John", "Doe", 50, "blue");
+    const janeClass = new PersonClass("Jane", "Doe", 30, "green");
+
+  </script>
+</body>
+</html>
