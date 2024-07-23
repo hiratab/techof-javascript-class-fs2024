@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Promises</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <h1 id="title">Asynchronous Javascript</h1>
+
+  <script>
+    function promessa() {
+      console.log('Promessa');
+
+      return new Promise(function (resolve, reject) {
+        console.log('Promise iniciada');
+
+        setTimeout(function () {
+          console.log('Vai resolver a promise');
+          resolve('Promise resolved');
+        }, 2000);
+      });
+    }
+
+    const promise = promessa()
+      .then((data) => {
+        console.log(data);
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log('Vai rejeitar a promise');
+            reject('Promise rejected');
+          }, 2000);
+        });
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .then((data) => {
+        console.log(data);
+        console.log('Chamando promessa de novo')
+        return promessa();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+    console.log(promise);
+  </script>
+</body>
+
+</html>

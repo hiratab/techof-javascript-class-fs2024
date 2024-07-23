@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Asynchronous</title>
+</head>
+<body>
+  <h1 id="title">Asynchronous Javascript</h1>
+
+  <input type="text" id="country" placeholder="Enter a country">
+  <button id="button" onclick="getCountry()">Get Country</button>
+
+  <p id="country-name"></p>
+  <p id="country-capital"></p>
+  <p id="country-population"></p>
+  <p id="country-area"></p>
+  <p id="country-languages"></p>
+  <p id="country-currencies"></p>
+  <img id="flag" src="" alt="Flag" width="100">
+  
+  <script>
+    console.log("Hello, world!");
+
+    function renderCountry({ name, flags, capital, population, area, languages, currencies }) {
+      document.getElementById("country-name").innerText = name.common;
+      document.getElementById("flag").src = flags.png;
+      document.getElementById("country-capital").innerText = `Capital: ${capital}`;
+      document.getElementById("country-population").innerText = `Population: ${population}`;
+      document.getElementById("country-area").innerText = `Area: ${area} km²`;
+      document.getElementById("country-languages").innerText = `Languages: ${Object.values(languages).join(", ")}`;
+      document.getElementById("country-currencies").innerText = `Currencies: ${Object.values(currencies).join(", ")}`;
+    }
+
+    function getCountry() {
+      let country = document.getElementById("country").value;
+      let url = `https://restcountries.com/v3.1/name/${country}`;
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", url, true);
+      xhr.send();
+      xhr.addEventListener("load", function() {
+        let data = JSON.parse(xhr.responseText);
+        console.log(data);
+        renderCountry(data[0]);
+      });
+      console.log("Request sent!");
+    }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Asynchronous</title>
+  <style>
+    #error {
+      display: none;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="title">Asynchronous Javascript</h1>
+
+  <input type="text" id="country" placeholder="Enter a country">
+  <button id="button" onclick="getCountry()">Get Country</button>
+
+  <p id="country-name"></p>
+  <p id="country-capital"></p>
+  <p id="country-population"></p>
+  <p id="country-area"></p>
+  <p id="country-languages"></p>
+  <p id="country-currencies"></p>
+  <img id="flag" src="" alt="Flag" width="100">
+  <p id="error"></p>
+
+  <script>
+    function renderCountry({ name, flags, capital, population, area, languages, currencies }) {
+      document.getElementById("country-name").innerText = name.common;
+      document.getElementById("flag").src = flags.png;
+      document.getElementById("country-capital").innerText = `Capital: ${capital}`;
+      document.getElementById("country-population").innerText = `Population: ${population}`;
+      document.getElementById("country-area").innerText = `Area: ${area} km²`;
+      document.getElementById("country-languages").innerText = `Languages: ${Object.values(languages).join(", ")}`;
+      document.getElementById("country-currencies").innerText = `Currencies: ${Object.values(currencies).join(", ")}`;
+    }
+
+    function getCountry() {
+      let country = document.getElementById("country").value;
+      let url = `https://restcountries.com/v3.1/name/${country}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(([country]) => {
+          renderCountry(country);
+        })
+        .catch(error => {
+          console.error(error);
+          document.getElementById("error").style.display = "block";
+          document.getElementById("error").innerText = `${country} not found!`;
+
+          setTimeout(() => {
+            document.getElementById("error").innerText = "";
+            document.getElementById("error").style.display = "none";
+          }, 5000);
+        });
+    }
+
+  </script>
+</body>
+
+</html>
