@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Delay</title>
+</head>
+
+<body>
+
+  <script>
+    (async () => {
+      const random = Math.floor(Math.random() * 1000) > 800;
+
+      const wait = (ms) => new Promise(function (resolve, reject) {
+        setTimeout(() => {
+          console.log(`Waited for ${ms} milliseconds`);
+          resolve(`${ms} ms random ${random}`);
+        }, ms)
+      });
+
+      wait(3000);
+      console.log('Vai rodar o wait(2000)')
+      wait(2000);
+
+      await wait(3000);
+      console.log('Vai rodar o wait(2000). Await primeiro')
+      wait(2000);
+      
+      wait(2000);
+      console.log('Vai rodar o wait(3000). Await depois')
+      await wait(3000);
+    })()
+  </script>
+</body>
+
+</html>

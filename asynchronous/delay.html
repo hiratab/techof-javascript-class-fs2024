@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <title>Delay</title>
@@ -44,7 +44,6 @@
       .then(() => wait(2008))
       .then(() => wait(2009))
       .catch(() => console.log('Promise rejected ' + error));
-      ;
 
       Promise.all([
         wait(2000),
@@ -61,7 +60,6 @@
         console.log('All promises resolved');
       })
       .catch(() => console.log('Promise rejected ' + error));
-      ;
   </script>
 </body>
 
