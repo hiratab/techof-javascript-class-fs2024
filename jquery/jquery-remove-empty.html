@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+</head>
+
+<body>
+  <button id="remove">Remove</button>
+  <button id="empty">Empty</button>
+  <button id="remove-last">Remove Last</button>
+
+  <ul id="names">
+    <li>John Doe</li>
+    <li>Steve Smith</li>
+    <li id="penultimo">Carol Williams</li>
+    <li class="last">Jane Doe</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#remove").click(function () {
+        $("#names").remove();
+      });
+
+      $("#empty").click(function () {
+        $("#names").empty();
+      });
+    });
+
+    $("#remove-last").click(function () {
+      $("li").remove(".last");
+      $("li").remove("#penultimo");
+    });
+
+  </script>
+</body>
+
+</html>
