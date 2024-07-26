@@ -31,7 +31,7 @@
       });
 
       $("#hide-ps-btn").click(function () {
-        $("p").toggle();
+        $("p").toggle(300);
       });
 
       $("#hide-title-btn").click(function () {
@@ -41,11 +41,15 @@
         // } else {
         //   document.querySelector(".title").style.display = 'none';
         // }
-        $(".title").toggle();
+        $(".title").toggle(300);
       });
 
       $("#hide-all-btn").click(function () {
-        $("button").toggle();
+        $("h1").toggle(300, function () {
+          $("p").toggle(300, function () {
+            $("button").toggle(300);
+          });
+        });
       });
     });
 
