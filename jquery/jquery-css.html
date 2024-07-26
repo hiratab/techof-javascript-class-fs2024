@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="remove-class">Remove Class</button>
+  <button id="add-class">Add Class</button>
+  <button id="toggle-class">Toggle Class</button>
+  <button id="css">CSS</button>
+
+  <ul id="names">
+    <li>John Doe</li>
+    <li>Steve Smith</li>
+    <li>Carol Williams</li>
+    <li>Jane Doe</li>
+  </ul>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#remove-class").click(function () {
+        $("#names").removeClass("red");
+      });
+
+      $("#add-class").click(function () {
+        $("#names").addClass("red");
+      });
+
+      $("#toggle-class").click(function () {
+        $("#names").toggleClass("red");
+      });
+
+      $("#css").click(function () {
+        $("#names").css("color", "blue");
+      });
+    });
+  </script>
+</body>
+
+</html>
