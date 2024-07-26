@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+</head>
+
+<body>
+  <button id="hide-ps-btn">Show / Hide paragraph elements</button>
+  <button id="hide-title-btn">Show / Hide title</button>
+  <button id="hide-all-btn">Show / Hide all elements</button>
+
+  <h1 class="title">jQuery</h1>
+  <p>jQuery is a fast, small, and feature-rich JavaScript library.</p>
+
+  <!-- <button id="btn" onclick="clicou()">Click Me</button> -->
+  <button id="btn">Click Me</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    function clicou() {
+      alert('Clicou');
+    }
+
+    // document.getElementById("btn").onclick = clicou;
+
+    $(document).ready(function () {
+      $("#btn").click(function () {
+        alert('Clicou');
+      });
+
+      $("#hide-ps-btn").click(function () {
+        $("p").toggle();
+      });
+
+      $("#hide-title-btn").click(function () {
+        // const display = document.querySelector(".title").style.display;
+        // if (display === 'none') {
+        //   document.querySelector(".title").style.display = 'block';
+        // } else {
+        //   document.querySelector(".title").style.display = 'none';
+        // }
+        $(".title").toggle();
+      });
+
+      $("#hide-all-btn").click(function () {
+        $("button").toggle();
+      });
+    });
+
+  </script>
+</body>
+
+</html>
