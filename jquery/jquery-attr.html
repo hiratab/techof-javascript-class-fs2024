@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+</head>
+
+<body>
+  <a href="https://www.google.com" id="link">Google</a>
+  <button id="btn">Change Search Engine</button>
+
+  <p id="change-color">Change Color</p>
+  <button id="red">Red</button>
+  <button id="blue">Blue</button>
+
+  <img alt=" " src="./ad.png" />
+  <button id="change-image">Change Image</button>
+  <button id="change-image-alt">Change Image Alt</button>
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function () {
+      $("#btn").click(function () {
+        $("#link").attr("href", "https://www.bing.com");
+        $("#link").text("Bing");
+      });
+
+      $("#red").click(function () {
+        $("#change-color").attr("style", "color: red;");
+      });
+
+      $("#blue").click(function () {
+        $("#change-color").attr("style", "color: blue;");
+      });
+
+      $("#change-image").click(function () {
+        $("img").attr("src", "https://via.placeholder.com/150");
+      });
+
+      $("#change-image-alt").click(function () {
+        $("img").attr("alt", "Placeholder Image");
+      });
+    });
+  </script>
+</body>
+
+</html>
