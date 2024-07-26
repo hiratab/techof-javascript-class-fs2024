@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+</head>
+
+<body>
+  <p id="text">This is a <b>paragraph</b>.</p>
+
+  <input type="text" id="name" value="John Doe">
+  <button id="btn">Click</button>
+  <button id="change-text">Change Text</button>
+  <button id="change-html">Change HTML</button>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+
+    $("#btn").click(function () {
+      // document.getElementById("text").innerText
+      console.log("text " + $("#text").text());
+
+      // document.getElementById("text").innerHTML;
+      console.log("html " + $("#text").html());
+
+      // document.getElementById("name").value
+      console.log("val " + $("#name").val());
+    });
+
+    $("#change-text").click(function () {
+      // document.getElementById("text").innerText = document.getElementById("name").value;
+      $("#text").text($("#name").val());
+    });
+
+    $("#change-html").click(function () {
+      // document.getElementById("text").innerHTML = `<b>${document.getElementById("name").value}</b>`;
+      $("#text").html(`<b>${$("#name").val()}</b>`);
+    });
+  </script>
+</body>
+
+</html>
