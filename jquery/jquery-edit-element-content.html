@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>jQuery</title>
+</head>
+
+<body>
+  <input type="text" id="name" placeholder="Enter your name">
+  <br>
+  <button id="append">Append</button>
+  <button id="prepend">Prepend</button>
+  <button id="after">After</button>
+  <button id="before">Before</button>
+  <p id="message">Hello, World!</p>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $("#append").click(function () {
+        $("#message").append(` ${$("#name").val()}`);
+      });
+
+      $("#prepend").click(function () {
+        $("#message").prepend(`${$("#name").val()} `);
+      });
+      
+      $("#after").click(function () {
+        $("#message").after(`<p>${$("#name").val()}</p>`);
+      });
+
+      $("#before").click(function () {
+        $("#message").before(`<p>${$("#name").val()}</p>`);
+      });
+    });
+    
+  </script>
+</body>
+
+</html>
