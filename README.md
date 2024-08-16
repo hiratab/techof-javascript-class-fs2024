@@ -47,22 +47,27 @@ while (condition)
 Lists, as know as arrays, are capable to store multiple values. It is possible to access each value stored in the list individually.
 
 ### Create an Array
-```const arr = []
-const sequence = [1, 2, 3, 4, 5]```
+```
+const arr = []
+const sequence = [1, 2, 3, 4, 5]
+```
 
 ### Access a value in the array
-```const sequence = [1, 2, 3, 4, 5]
+```
+const sequence = [1, 2, 3, 4, 5]
 console.log(sequence[0]) // "1"
 ```
 
 ### Modifying a value in the array
-```const sequence = [1, 2, 3, 4, 5]
+```
+const sequence = [1, 2, 3, 4, 5]
 sequence[0] = 10
 console.log(sequence) // "[10, 2, 3, 4, 5]
 ```
 
 ### Adding items
-```const arr = []
+```
+const arr = []
 arr.push(1)
 console.log(arr) // "[1]
 ```
