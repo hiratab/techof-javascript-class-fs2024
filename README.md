@@ -142,8 +142,27 @@ console.log(array1);
 ```
 
 ## Functions
+Set of statements that performs a task, it can receive an input and can generate an output.
+
+### Syntax
+```
+function nameOfTheFunction(input) {
+  // statement
+}
+nameOfTheFunction();
+```
+```
+function square(number) {
+  return number * number;
+}
+const result = square(2);
+console.log(result) // 4
+``
+
 
 ## DOM
+The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+
 
 ## Event Handler
 
