@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+</head>
+<body>
+  <div>
+    <input type="text" id="name" />
+    <button id="add" onclick="addName()">Add</button>
+  </div>
+
+  <div id="list"></div>
+  
+  <script src="./js/localStorage.js"></script>
+  <script src="./js/names.js"></script>
+
+  <script>
+    const getValueFromInput = (elementId) => {
+      const value = document.getElementById(elementId).value;
+      document.getElementById(elementId).value = "";
+      return value;
+    }
+
+
+    const addName = () => {
+      const name = getValueFromInput("name");
+
+      addNameToLocalStorage(name);
+      renderNamesList();
+    }
+
+    document.addEventListener('keydown', (event) => {
+      switch(event.key) {
+        case 'Enter':
+          addName();
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
