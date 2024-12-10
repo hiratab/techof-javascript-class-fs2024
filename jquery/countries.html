@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DYI - Async/Await</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <style>
+    .country {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .country-flag {
+      width: 6em;
+    }
+
+    #countries {
+      padding-top: 1em;
+    }
+
+    .loader {
+      width: 48px;
+      height: 48px;
+      border: 5px dotted #000;
+      border-radius: 50%;
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      animation: rotation 2s linear infinite;
+      display: none;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .error {
+      border: 0.1em solid red;
+      display: none;
+      flex-direction: row;
+    }
+
+    .error img {
+      width: 2em;
+      height: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="country-filter">
+    <input id="country-name" type="text">
+  </div>
+  <span class="loader"></span>
+  <div class="error">
+    <img
+      src="https://raw.githubusercontent.com/hiratab/techof-javascript-class-fs2024-09/refs/heads/main/asynchronous-javascript/images/error.svg" />
+    <p id="error-message"></p>
+  </div>
+  <div id="countries">
+
+  </div>
+
+  <script>
+    function showLoading() {
+      $(".loader").show();
+    }
+
+    function hideLoading() {
+      $(".loader").hide();
+    }
+
+    function showError() {
+      $(".error").show();
+    }
+
+    function hideError() {
+      $(".error").hide();
+    }
+
+    function createCountry(country) {
+      const countryDiv = $("<div>", {
+        id: country.cca2,
+        class: "country"
+      });
+
+      const flag = $("<div>").append(
+        $("<img>", {
+          src: country.flags.png,
+          alt: `${country.name.common} flag`,
+          class: "country-flag"
+        })
+      );
+      countryDiv.append(flag);
+
+      const names = $("<div>").append(
+        $("<p>", {
+          text: country.name.common
+        }),
+        $("<p>", {
+          text: country.name.official
+        })
+      );
+      countryDiv.append(names);
+
+      $("#countries").append(countryDiv);
+    }
+
+    async function getCountries() {
+      const response = await fetch('https://restcountries.com/v3.1/all');
+      const responseJson = await response.json();
+
+      responseJson.forEach(createCountry)
+    }
+
+    $(document).ready(async function () {
+      showLoading();
+      await getCountries();
+      hideLoading();
+    })
+
+
+    const getCountry = async (countryName) => {
+      try {
+        showLoading();
+        hideError();
+        const response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        const responseJson = await response.json();
+
+        if (404 === responseJson.status) {
+          throw new Error('Country not found');
+        }
+        if (500 === responseJson.status) {
+          throw new Error('Try again later')
+        }
+
+        $("#countries").empty();
+        responseJson.forEach(createCountry);
+      } catch (error) {
+        $("#countries").empty();
+        showError(error);
+      } finally {
+        hideLoading();
+      }
+    }
+
+    let timeout;
+    $("#country-name").keyup((event) => {
+      const countryName = event.target.value;
+
+      timeout = setTimeout(() => {
+        getCountry(countryName);
+      }, 500);
+    });
+
+    $("#country-name").keydown(() => {
+      clearTimeout(timeout);
+    });
+  </script>
+</body>
+
+</html>

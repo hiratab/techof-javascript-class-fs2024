@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- <script src="js/jquery.js"></script> -->
+</head>
+
+<body>
+
+  <div>
+    <h3>Vanilla Javascript</h3>
+    <button id="show-hide">Show / Hide</button>
+    <button id="change-this-text-button">Change this text</button>
+    <button id="change-value-from-my-input">Change Value from input</button>
+    <button id="change-image">Change image</button>
+  </div>
+  <div>
+    <h3>jQuery</h3>
+    <button id="show-hide-jquery">Show / Hide</button>
+    <button id="change-this-text-button-jquery">Change this text</button>
+    <button id="change-value-from-my-input-jquery">Change Value from input</button>
+    <button id="change-image-jquery">Change image</button>
+  </div>
+  <h1 id="title">Titulo</h1>
+  <p id="change-this-text"></p>
+
+  <div>
+    <input type="text" id="my-input" />
+    <p id="value-from-my-input"></p>
+  </div>
+
+  <img id="image"/>
+
+  <script>
+    // window.onload = () => {};
+    $(function () {
+      document.getElementById("show-hide").addEventListener('click', () => {
+        if (document.getElementById("title").style.display !== 'none') {
+          document.getElementById("title").style.display = 'none';
+        } else {
+          document.getElementById("title").style.display = 'block';
+        }
+      });
+
+      $("#show-hide-jquery").click(() => {
+        $("h1").toggle(200);
+      });
+
+
+
+      document.getElementById("change-this-text-button").addEventListener('click', () => {
+        document.getElementById("change-this-text").innerText = "Vanilla Javascript";
+      });
+
+      $("#change-this-text-button-jquery").click(() => {
+        $("#change-this-text").text("jQuery")
+      });
+
+
+      document.getElementById("change-value-from-my-input").addEventListener('click', () => {
+        document.getElementById("value-from-my-input")
+          .innerText = document.getElementById("my-input").value;
+        document.getElementById("my-input").value = "";
+      });
+
+      $("#change-value-from-my-input-jquery").click(() => {
+        const input = $("#my-input")
+        $("#value-from-my-input").text(input.val())
+        input.val("")
+      });
+
+      
+      document.getElementById("change-image").addEventListener('click', () => {
+        document.getElementById("image").src = "./ball.png"
+      });
+
+      $("#change-image-jquery").click(() => {
+        $("#image").attr("src", "./ball.png");
+      });
+    });
+  </script>
+
+</body>
+
+</html>
